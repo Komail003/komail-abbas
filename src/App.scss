@@ -1,0 +1,116 @@
+// Define futuristic color variables
+$primary-color: #f00;      // Neon cyan
+$secondary-color: #f0f;    // Neon magenta
+$bg-gradient-start: #141414;
+$bg-gradient-end: #000;
+
+// Apply a futuristic font (e.g., Orbitron from Google Fonts)
+// Be sure to add the following link to your index.html in the <head>:
+// <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, $bg-gradient-start, $bg-gradient-end);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem;
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    
+    a {
+      color: #fff;
+      font-size: 2rem;
+      transition: transform 0.3s, color 0.3s;
+      
+      &:hover {
+        transform: scale(1.2);
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.projects {
+  flex: 1;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+    &:hover {
+      box-shadow: 0 0 20px $primary-color;
+    }
+    
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+    
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.3s;
+      
+      &:hover {
+        border-bottom: 1px solid $secondary-color;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 0.9rem;
+}
+
+// Simple fade-in animation
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
