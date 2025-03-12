@@ -75,6 +75,7 @@ const App = () => {
         </motion.h1>
         <p>Web Developer | MERN Stack, Next.js</p>
         <div className="social-icons">
+          <p>Reach out:</p>
           <a href="https://github.com/komail003" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
           </a>
