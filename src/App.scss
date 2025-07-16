@@ -1,6 +1,6 @@
 // Define futuristic color variables
-$primary-color: #f00;      // Neon cyan
-$secondary-color: #f0f;    // Neon magenta
+$primary-color: #f00; // Neon cyan
+$secondary-color: #f0f; // Neon magenta
 $bg-gradient-start: #141414;
 $bg-gradient-end: #000;
 
@@ -12,7 +12,7 @@ $bg-gradient-end: #000;
   min-height: 100vh;
   background: linear-gradient(135deg, $bg-gradient-start, $bg-gradient-end);
   color: #fff;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -20,29 +20,31 @@ $bg-gradient-end: #000;
 .header {
   text-align: center;
   padding: 2rem;
-  
+
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     animation: fadeIn 1s ease-in-out;
   }
-  
+
   p {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    
+
     a {
       color: #fff;
       font-size: 2rem;
-      transition: transform 0.3s, color 0.3s;
-      
+      transition:
+        transform 0.3s,
+        color 0.3s;
+
       &:hover {
         transform: scale(1.2);
         color: $primary-color;
@@ -57,45 +59,47 @@ $bg-gradient-end: #000;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  
+
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
+
   .project-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 1.5rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+
     &:hover {
       box-shadow: 0 0 20px $primary-color;
     }
-    
+
     h2 {
       font-size: 1.75rem;
       margin-bottom: 1rem;
       color: $primary-color;
     }
-    
+
     p {
       margin-bottom: 1rem;
       line-height: 1.5;
       font-size: 1rem;
     }
-    
+
     a {
       color: $secondary-color;
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-bottom 0.3s;
-      
+
       &:hover {
         border-bottom: 1px solid $secondary-color;
       }
@@ -112,6 +116,82 @@ footer {
 
 // Simple fade-in animation
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// hero section styles
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    max-width: 1200px;
+    z-index: 2;
+  }
+
+  .hero-content {
+    flex: 1;
+    color: #fff;
+    padding-right: 2rem;
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: white;
+      text-shadow: 0 0 5px #fff;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+    .hero-button {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-family: "Orbitron", sans-serif;
+      border: 2px solid $primary-color;
+      border-radius: 2rem;
+      background: transparent;
+      color: $primary-color;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        background: $primary-color;
+        color: #000;
+      }
+    }
+  }
+
+  .hero-img {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: contain;
+    // box-shadow: 0 0 20px $primary-color;
+  }
 }
