@@ -102,7 +102,6 @@ const App = () => {
       />
       <header className="header">
         <div className="social-icons">
-          <p>Reach out:</p>
           <a
             href="https://github.com/komail003"
             target="_blank"
@@ -124,6 +123,14 @@ const App = () => {
           </a>
         </div>
       </header>
+      <motion.h1
+        className="portfolio-title"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        My Portfolio
+      </motion.h1>
       <main className="projects">
         {projects.map((project, index) => (
           <motion.div

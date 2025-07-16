@@ -1,7 +1,7 @@
 // Define futuristic color variables
 $primary-color: #f00; // Neon cyan
 $secondary-color: #f0f; // Neon magenta
-$bg-gradient-start: #141414;
+$bg-gradient-start: #222222;
 $bg-gradient-end: #000;
 
 // Apply a futuristic font (e.g., Orbitron from Google Fonts)
@@ -16,7 +16,13 @@ $bg-gradient-end: #000;
   display: flex;
   flex-direction: column;
 }
-
+.portfolio-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
 .header {
   text-align: center;
   padding: 2rem;
@@ -55,7 +61,7 @@ $bg-gradient-end: #000;
 
 .projects {
   flex: 1;
-  padding: 2rem;
+  padding: 6rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -148,7 +154,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 60%;
+    width: 75%;
     max-width: 1200px;
     z-index: 2;
   }
@@ -188,9 +194,12 @@ footer {
 
   .hero-img {
     flex: 1;
-    max-width: 50%;
+    max-width: 35%;
     height: auto;
     border-radius: 20px;
+    mix-blend-mode: darken;
+    filter: grayscale(100%);
+
     object-fit: contain;
     // box-shadow: 0 0 20px $primary-color;
   }
