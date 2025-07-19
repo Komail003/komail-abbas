@@ -131,6 +131,20 @@ footer {
 }
 
 // hero section styles
+.hero-img-wrapper {
+  position: relative;
+  display: inline-block; // or block to fit your layout
+}
+
+.fly {
+  position: absolute;
+  background: #f00;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+  mix-blend-mode: screen;
+}
+
 .hero-section {
   position: relative;
   width: 100%;
@@ -167,7 +181,6 @@ footer {
       font-size: 3.5rem;
       margin-bottom: 1rem;
       color: white;
-      text-shadow: 0 0 5px #fff;
     }
     p {
       font-size: 1.25rem;
@@ -194,7 +207,7 @@ footer {
 
   .hero-img {
     flex: 1;
-    max-width: 35%;
+    max-width: 85%;
     height: auto;
     border-radius: 20px;
     mix-blend-mode: darken;
@@ -203,4 +216,125 @@ footer {
     object-fit: contain;
     // box-shadow: 0 0 20px $primary-color;
   }
+}
+
+// contact form styles
+.contact-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem 8rem;
+}
+
+.contact-form {
+  width: 100%; 
+  max-width: 600px;
+  margin: 0 auto; 
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  font-family: "Orbitron", sans-serif;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: $primary-color;
+    text-shadow: 0 0 8px $primary-color;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    color: #ccc;
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.5rem;
+      font-family: inherit;
+      color: #fff;
+      font-size: 1rem;
+      transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 8px $primary-color;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background: $primary-color;
+    border: none;
+    border-radius: 2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 12px $primary-color;
+    transition:
+      background 0.3s,
+      color 0.3s,
+      box-shadow 0.3s;
+
+    &:hover {
+      background: transparent;
+      color: $primary-color;
+      box-shadow: 0 0 12px $secondary-color;
+      border: 1px solid $secondary-color;
+    }
+  }
+}
+
+.pendulum-container {
+  position: relative;
+  width: 40px;
+  height: 200px;
+  transform-origin: top center;
+}
+
+.pendulum-rope {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 170px;
+  background: #ccc;
+  transform: translateX(-50%);
+  mix-blend-mode: screen;
+}
+
+.pendulum-weight {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  background: $primary-color;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px $primary-color;
 }
